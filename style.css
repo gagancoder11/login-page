@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+  justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   background: linear-gradient(135deg,#0f172a,#1e1b4b,#312e81);
+}
+
+
+.envelope{
+    position: absolute;
+    width: 320px;
+    height: 210px;
+    background: linear-gradient(135deg,#9333ea,#4f46e5);
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    transition: 1s;
+}
+
+.front{
+    position: absolute;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(135deg,#7c3aed,#6366f1);
+   clip-path: polygon(0 0 ,50% 50%,100% 0);
+   transform-origin: top;
+   transition: 1s;
+   z-index: 5;
+}
+
+.envelope.open .front{
+    transform: rotateX(180deg);
+}
+
+.envelope.hide{
+    opacity: 0;
+    transform: scale(.8);
+}
+
+.card{
+    position: absolute;
+    width: 360px;
+    padding: 35px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transform: translateY(500px);
+    opacity: 0;
+    transition: 1.2s;
+  
+}
+
+.card.show{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card h1{
+    color: white;
+    text-align: center;
+}
+
+.card p{
+    text-align: center;
+    color: #d1d5db;
+}
+
+
+input{
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    background: rgba(255,255,255,.15);
+    color: white;
+}
+
+input::placeholder{
+    color: #ddd;
+}
+
+button{
+    padding: 15px;
+    border: none;
+    border-radius:  15px; ;
+    cursor: pointer;
+    background: linear-gradient(135deg, #a855f7,#6366f1);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover{
+    transform: scale(1.03);
+}
+
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+@media(max-width:450px) {
+    .card{
+        width: 90%;
+    }
+}

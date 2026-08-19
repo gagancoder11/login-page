@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+
+h1{
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,.2);
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(20px);
+    text-shadow: 0 0 15px rgba(255,255,255,.5);
+   
+}
+
+h1:hover{
+     transform: perspective(1000px)
+    rotateX(10deg)
+    rotateY(-10deg);
+
+}
